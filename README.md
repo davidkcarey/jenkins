@@ -6,7 +6,7 @@
 [![Wiki](https://img.shields.io/badge/Wiki-yellow.svg)](https://github.com/IAG-NZ/Jenkins/Wiki)
 
 ## Notice
-This is a forked copy of the original module developed by IAG_NZ. The only change is forcing self signed certs to be ingored.
+This is a forked copy of the original module developed by IAG_NZ. The only change is forcing self signed certs to be ignored.
 
 # Jenkins
 
