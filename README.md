@@ -205,7 +205,7 @@ $Folders = Get-JenkinsFolderList `
 
 ```powershell
 Import-Module -Name Jenkins
-$Folders = Test-JenkinsFolder -Name 'Jenkins Folder' `
+Test-JenkinsFolder -Name 'Jenkins Folder' `
     -Uri 'https://jenkins.contoso.com' `
     -Credential (Get-Credential)
 ```
