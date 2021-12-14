@@ -212,6 +212,7 @@ function Get-JenkinsCrumb
         $Result = Invoke-WebRequest `
             -Uri $FullUri `
             -Headers $Headers `
+            -SkipCertificateCheck `
             -ErrorAction Stop
     }
     catch
@@ -748,7 +749,8 @@ function Initialize-JenkinsUpdateCache
 
     $remotePluginJSON = Invoke-WebRequest `
         -Uri $Uri `
-        -UseBasicParsing
+        -UseBasicParsing `
+        -SkipCertificateCheck
     $result = $remotePluginJSON.Content -match 'updateCenter.post\(\r?\n(.*)\r?\n\);'
 
     if (-not $result)
@@ -929,6 +931,7 @@ function Initialize-JenkinsUpdateCache
                         -Uri $remotePlugin.url `
                         -UseBasicParsing `
                         -OutFile $PluginFilePath `
+                        -SkipCertificateCheck `
                         -ErrorAction Stop
                     $downloadOK = $true
                 }
@@ -1010,6 +1013,7 @@ function Initialize-JenkinsUpdateCache
                         -Uri $remoteJSON.Core.url `
                         -UseBasicParsing `
                         -OutFile $coreFilePath `
+                        -SkipCertificateCheck `
                         -ErrorAction Stop
                     $downloadOK = $true
                 }
@@ -1187,6 +1191,7 @@ function Invoke-JenkinsCommand
                 $result = Invoke-RestMethod `
                     -Uri $fullUri `
                     -Headers $Headers `
+                    -SkipCertificateCheck `
                     @PSBoundParameters `
                     -ErrorAction Stop
             }
@@ -1214,6 +1219,7 @@ function Invoke-JenkinsCommand
                 $result = Invoke-RestMethod `
                     -Uri $fullUri `
                     -Headers $Headers `
+                    -SkipCertificateCheck `
                     @PSBoundParameters `
                     -ErrorAction Stop
             }
@@ -1246,6 +1252,7 @@ function Invoke-JenkinsCommand
                 -Uri $fullUri `
                 -Headers $Headers `
                 -MaximumRedirection 0 `
+                -SkipCertificateCheck `
                 @PSBoundParameters `
                 -ErrorAction SilentlyContinue `
                 -ErrorVariable RequestErrors
@@ -1285,6 +1292,7 @@ function Invoke-JenkinsCommand
                     -UseBasicParsing `
                     -Uri $fullUri `
                     -Headers $Headers `
+                    -SkipCertificateCheck `
                     @PSBoundParameters `
                     -ErrorAction Stop
             }
