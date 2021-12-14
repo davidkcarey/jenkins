@@ -5,6 +5,9 @@
 [![Minimum Supported PowerShell Core Version](https://img.shields.io/badge/PowerShell_Core-6.0-blue.svg)](https://github.com/IAG-NZ/Jenkins)
 [![Wiki](https://img.shields.io/badge/Wiki-yellow.svg)](https://github.com/IAG-NZ/Jenkins/Wiki)
 
+## Notice
+This is a forked copy of the original module developed by IAG_NZ. The only change is forcing self signed certs to be ingored.
+
 # Jenkins
 
 PowerShell module for interacting with a CloudBees Jenkins server using the
